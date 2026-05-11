@@ -140,6 +140,9 @@ select {
   transition: transform var(--hover-transition-duration) var(--hover-transition-timing),
     box-shadow var(--hover-transition-duration) var(--hover-transition-timing);
   z-index: var(--layer-flat);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .product-card__link {
@@ -160,12 +163,14 @@ select {
   .card-hover-effect-lift .collection-card:hover,
   .card-hover-effect-lift .predictive-search-results__card:hover {
     transform: translateY(calc(-1 * var(--hover-lift-amount)));
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   }
 
   .card-hover-effect-scale .product-card:hover,
   .card-hover-effect-scale .collection-card:hover,
   .card-hover-effect-scale .predictive-search-results__card:hover {
     transform: scale(var(--hover-scale-amount));
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   }
 
   .card-hover-effect-subtle-zoom .card-gallery,
@@ -180,6 +185,7 @@ select {
   .card-hover-effect-subtle-zoom .product-card:hover .product-card__image,
   .card-hover-effect-subtle-zoom .predictive-search-results__card:hover {
     transform: scale(var(--hover-subtle-zoom-amount));
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   }
 
 }
