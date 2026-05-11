@@ -52,6 +52,8 @@
 {% capture attributes %}
   class="{{ class }} spacing-style text-block text-block--{{ block.id }} {{ block_settings.type_preset }}
     {{ text_block_classes }}
+    {% if block.name == 'Collection Title' %}collection-hero-title{% endif %}
+    {% if block.name == 'Collection Description' %}collection-hero-description{% endif %}
   "
 
   style="
