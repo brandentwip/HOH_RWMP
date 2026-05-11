@@ -11,7 +11,7 @@
     <span class="mobile-bottom-nav__label">Home</span>
   </a>
 
-  <a href="{{ routes.search_url }}" class="mobile-bottom-nav__item{% if current_path contains '/search' %} mobile-bottom-nav__item--active{% endif %}"{% if current_path contains '/search' %} aria-current="page"{% endif %}>
+  <button type="button" on:click="#search-modal/showDialog" class="mobile-bottom-nav__item{% if current_path contains '/search' %} mobile-bottom-nav__item--active{% endif %}"{% if current_path contains '/search' %} aria-current="page"{% endif %}>
     <span class="mobile-bottom-nav__icon" aria-hidden="true">
       <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="9" cy="9" r="4.5" />
@@ -19,7 +19,7 @@
       </svg>
     </span>
     <span class="mobile-bottom-nav__label">Search</span>
-  </a>
+  </button>
 
   <a href="{{ routes.root_url }}collections/all" class="mobile-bottom-nav__item{% if current_path contains '/collections' %} mobile-bottom-nav__item--active{% endif %}"{% if current_path contains '/collections' %} aria-current="page"{% endif %}>
     <span class="mobile-bottom-nav__icon" aria-hidden="true">
@@ -31,7 +31,7 @@
     <span class="mobile-bottom-nav__label">Collections</span>
   </a>
 
-  <a href="{{ routes.cart_url }}" class="mobile-bottom-nav__item{% if current_path contains '/cart' %} mobile-bottom-nav__item--active{% endif %}"{% if current_path contains '/cart' %} aria-current="page"{% endif %}>
+  <button type="button" on:click="#cart-drawer/open" class="mobile-bottom-nav__item{% if current_path contains '/cart' %} mobile-bottom-nav__item--active{% endif %}"{% if current_path contains '/cart' %} aria-current="page"{% endif %}>
     <span class="mobile-bottom-nav__icon" aria-hidden="true">
       <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
         <path d="M3 3h2l1 11h10l2-7H6" />
@@ -43,5 +43,5 @@
     {% if cart.item_count > 0 %}
       <span class="mobile-bottom-nav__badge">{{ cart.item_count }}</span>
     {% endif %}
-  </a>
+  </button>
 </nav>
