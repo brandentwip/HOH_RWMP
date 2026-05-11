@@ -137,12 +137,9 @@ select {
 .predictive-search-results__card--product,
 .predictive-search-results__card {
   position: relative;
-  transition: transform var(--hover-transition-duration) var(--hover-transition-timing),
-    box-shadow var(--hover-transition-duration) var(--hover-transition-timing);
+  transition: transform var(--hover-transition-duration) var(--hover-transition-timing);
   z-index: var(--layer-flat);
   background: var(--color-background);
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   overflow: hidden;
 }
 
@@ -164,14 +161,12 @@ select {
   .card-hover-effect-lift .collection-card:hover,
   .card-hover-effect-lift .predictive-search-results__card:hover {
     transform: translateY(calc(-1 * var(--hover-lift-amount)));
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   }
 
   .card-hover-effect-scale .product-card:hover,
   .card-hover-effect-scale .collection-card:hover,
   .card-hover-effect-scale .predictive-search-results__card:hover {
     transform: scale(var(--hover-scale-amount));
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   }
 
   .card-hover-effect-subtle-zoom .card-gallery,
@@ -187,10 +182,7 @@ select {
   .card-hover-effect-subtle-zoom .predictive-search-results__card:hover {
     transform: scale(var(--hover-subtle-zoom-amount));
   }
-
-  .product-card:hover {
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  }
+}
 }
 
 dialog {
@@ -4076,8 +4068,7 @@ text-component {
 .predictive-search-results__card:hover {
   position: relative;
   z-index: var(--layer-raised);
-  transition: transform var(--hover-transition-duration) var(--hover-transition-timing),
-    box-shadow var(--hover-transition-duration) var(--hover-transition-timing);
+  transition: transform var(--hover-transition-duration) var(--hover-transition-timing);
 }
 
 .predictive-search-results__inner {
