@@ -1,0 +1,48 @@
+{% if settings.envType == 'production' %}
+{% assign env = 'pdp' %}
+{% elsif settings.envType == 'sandbox' %}
+{% assign env = 'sandbox.pdp' %}
+{%endif%}
+
+<script>
+  window.merchantInfo = {
+    mid: "{{ settings.mid }}",
+    environment: "{{ settings.envType }}",
+    type: "merchantInfo",
+    storeId: "{{shop.id}}",
+    fbpixel: "{{settings.fbpixel}}",
+  }
+  var cart = {{ cart | json }}
+</script>
+<script src="https://{{env}}.gokwik.co/merchant-integration/build/merchant.integration.js?shop={{ shop.url }}" defer></script>
+
+<script>
+function setCookie(c_name, value, exdays) {
+  var exdate = new Date();
+  exdate.setDate(exdate.getDate() + exdays);
+  var c_value = escape(value) + ((exdays == null) ? "" : "; expires=" + exdate.toUTCString());
+  document.cookie = c_name + "=" + c_value;
+}
+document.addEventListener('UFE_CHECKOUT_FINALIZED', (event) => {
+  const { detail: UFEcheckoutInfo } = event || {};
+  const { checkout, acknowledge } = UFEcheckoutInfo || {};
+});
+</script>
+
+<script>
+const getCountryData = async () => {
+  const getCountry = await fetch("/browsing_context_suggestions.json");
+  const response = await getCountry.json();
+  const res = response?.detected_values?.country_name;
+  let css = ""
+  if (res === 'India') {
+    css = `.shopifycheckoutbtn{display:none !important;}`
+  } else {
+    css = `.gokwik-checkout{display:none !important;} #gokwik-buy-now{display:none !important;}`
+  }
+  const styleElement = document.createElement("style");
+  styleElement.textContent = css;
+  document.head.appendChild(styleElement);
+}
+document.addEventListener("DOMContentLoaded", getCountryData);
+</script>
