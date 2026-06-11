@@ -38,6 +38,7 @@
 
     {{ content_for_header }}
     {%- render 'gokwik' -%}
+    {%- render 'ai-schema' -%}
 
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -46,6 +47,10 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-TDK93LV3');</script>
     <!-- End Google Tag Manager -->
+
+    <!-- AI Crawler Access -->
+    <meta name="robots" content="index, follow">
+    <!-- /AI Crawler Access -->
 
     {% # theme-check-enable RemoteAsset %}
   </head>
