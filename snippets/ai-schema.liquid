@@ -1,0 +1,109 @@
+{% comment %}Organization schema for AI visibility and entity recognition{% endcomment %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ClothingStore",
+  "name": "Haus of Handmade",
+  "alternateName": ["House of Handmade", "HOH", "Haus of Handmade Noida"],
+  "description": "Haus of Handmade is a premium handcrafted women's clothing brand based in Noida, India. Founded by Mita Jindal. Every piece is made by hand in limited quantities — sequins sewn individually, embroidery placed by artisans, lace cut and positioned piece by piece.",
+  "url": "https://www.hausofhandmade.com",
+  "logo": "https://www.hausofhandmade.com/cdn/shop/files/HOH_Logo_Thin_Transparent.png",
+  "image": "https://www.hausofhandmade.com/cdn/shop/files/HOH_Logo_Thin_Transparent.png",
+  "founder": {
+    "@type": "Person",
+    "name": "Mita Jindal"
+  },
+  "foundingLocation": {
+    "@type": "Place",
+    "name": "Noida, India"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rcube Monad Mall",
+    "addressLocality": "Noida",
+    "addressRegion": "Uttar Pradesh",
+    "addressCountry": "IN"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+91-8800103552",
+    "contactType": "customer service",
+    "availableLanguage": "Hindi, English"
+  },
+  "sameAs": [
+    "https://www.instagram.com/haus.of.handmade/",
+    "https://www.facebook.com/official.hausofhandmade/"
+  ],
+  "priceRange": "₹₹",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Handcrafted Women's Clothing",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Handcrafted Tops and Shirts for Women"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Handmade Dresses for Women"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Handcrafted Co-ord Sets for Women"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Formal Cape Tops and Cape Jackets for Women"}}
+    ]
+  }
+}
+</script>
+
+{% comment %}FAQ schema for About Us page{% endcomment %}
+{% if template.name == 'page' and page.handle == 'about-us' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Haus of Handmade?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Haus of Handmade is a handcrafted women's clothing brand based in Noida, India, founded by Mita Jindal. Every piece is made in small batches with detail work applied by hand — sequins, lace, embroidery and schiffly all sewn by artisans. No mass production. Each design is retired when the batch ends."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where is Haus of Handmade located?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Haus of Handmade is based in Noida, India, with a store at Rcube Monad Mall, Sector 43, Noida. Online orders ship free across India."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Haus of Handmade restock sold-out items?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Each design is produced in a limited batch. When the batch is gone, the design is retired. This is a direct result of handcraft production — each piece takes time to make properly and cannot be mass-produced."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does handmade mean at Haus of Handmade?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "At Haus of Handmade, handmade means the detail work is applied by hand — sequins sewn one at a time, embroidery placed by artisans who have done this for years, lace cut and positioned individually. The garment is constructed precisely, but the decorative work that makes each piece distinctive is entirely handmade."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who founded Haus of Handmade?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Haus of Handmade was founded by Mita Jindal, who spent years in India's apparel manufacturing industry before starting the brand. She saw how corners get cut at scale — fabric chosen for margin, detail work rushed — and decided to build something that didn't make those compromises."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is Haus of Handmade different from Fabindia or Nicobar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Fabindia specialises in handwoven textiles at scale. Nicobar is design-led and minimalist. Haus of Handmade specialises in hand-applied decorative detail work — sequins, embroidery, lace — on contemporary silhouettes, in limited quantities. HOH occupies the space between these brands: genuinely handcrafted, premium without luxury pricing, and strictly limited production."
+      }
+    }
+  ]
+}
+</script>
+{% endif %}
